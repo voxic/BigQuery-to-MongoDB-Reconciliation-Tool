@@ -1,0 +1,6 @@
+google-cloud-bigquery==3.11.4
+pymongo==4.6.1
+python-dotenv==1.0.0
+pandas==2.1.4
+tqdm==4.66.1
+pytest==7.4.3 
