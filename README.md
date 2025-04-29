@@ -34,7 +34,18 @@ MONGODB_COLLECTION=your_collection_name
 
 ## Configuration
 
-The tool is configured through `config.py`. Here's how to set it up:
+The tool is configured through `config.py`. A template configuration file `config.example.py` is provided with examples of all available options. To get started:
+
+1. Copy `config.example.py` to `config.py`:
+```bash
+cp config.example.py config.py
+```
+
+2. Modify `config.py` to match your requirements. The example file includes:
+   - Basic configuration for BigQuery and MongoDB
+   - Example comparison rules for different data types
+   - Error handling settings
+   - Optional configurations for logging, query options, and output formatting
 
 ### 1. BigQuery Configuration
 ```python
