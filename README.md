@@ -10,6 +10,8 @@ This tool helps reconcile data between BigQuery and MongoDB Atlas, specifically 
 - Google Cloud credentials with BigQuery access
 - MongoDB Atlas connection string
 - MongoDB Atlas Analytical node configured
+- Google Private Service Connect configured between GCP and MongoDB Atlas
+- Ensure GCP and MongoDB Atlas are in the same region for optimal performance
 
 ## Setup
 
@@ -142,17 +144,22 @@ The reconciliation report (`reconciliation_results/reconciliation_report_YYYYMMD
 
 ## Performance Considerations
 
-1. **Batch Size**: Adjust `batch_size` in both BigQuery and MongoDB configs based on:
+1. **Network Configuration**:
+   - Use Google Private Service Connect to establish a secure, private connection between GCP and MongoDB Atlas
+   - Ensure both GCP and MongoDB Atlas are deployed in the same region to minimize latency
+   - Configure appropriate firewall rules and security groups
+
+2. **Batch Size**: Adjust `batch_size` in both BigQuery and MongoDB configs based on:
    - Available memory
    - Network bandwidth
    - Processing speed requirements
 
-2. **MongoDB Atlas**: 
+3. **MongoDB Atlas**: 
    - Use an Analytical node for better performance
    - Ensure proper indexing on key fields
    - Consider using read-only user credentials
 
-3. **BigQuery**:
+4. **BigQuery**:
    - Use appropriate project quotas
    - Consider using a dedicated service account
    - Monitor query costs
